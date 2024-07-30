@@ -1,12 +1,14 @@
 import React from 'react';
 import SingleQuestion from './SingleQuestion';
 
-function Questions() {
+function Questions({ questions }) {
 	return (
-		<>
-			<h2>Questions</h2>
-			<SingleQuestion />
-		</>
+		<section className="container">
+			<h1>FAQs</h1>
+			{questions.map((question) => (
+				<SingleQuestion key={question.id} {...question} />
+			))}
+		</section>
 	);
 }
 

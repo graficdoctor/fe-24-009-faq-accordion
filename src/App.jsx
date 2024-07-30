@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import Questions from './Questions';
+import data from './data';
 
 function App() {
+	const [questions, setQuestions] = useState(data);
+
 	return (
-		<>
-			<h1>Accordeon Starter</h1>
-			<Questions />
-		</>
+		<main>
+			<Questions questions={questions} />
+		</main>
 	);
 }
 
