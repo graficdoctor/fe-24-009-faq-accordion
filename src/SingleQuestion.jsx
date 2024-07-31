@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { FaPlus, FaMinus } from 'react-icons/fa6';
 
-function SingleQuestion({ title, info }) {
-	const [showInfo, setShowInfo] = useState(false);
+function SingleQuestion({ id, title, info, activeId, toggleQuestion }) {
+	const isActive = id === activeId;
 
 	return (
 		<article className="question">
@@ -11,12 +11,12 @@ function SingleQuestion({ title, info }) {
 				<button
 					className="question-btn"
 					type="button"
-					onClick={() => setShowInfo(!showInfo)}
+					onClick={() => toggleQuestion(id)}
 				>
-					{showInfo ? <FaMinus/> : <FaPlus />}
+					{isActive ? <FaMinus /> : <FaPlus />}
 				</button>
 			</header>
-			{showInfo && <p className="margin-top-5">{info}</p>}
+			{isActive && <p className="margin-top-5">{info}</p>}
 		</article>
 	);
 }

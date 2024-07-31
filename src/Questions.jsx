@@ -1,7 +1,7 @@
 import React from 'react';
 import SingleQuestion from './SingleQuestion';
 
-function Questions({ questions }) {
+function Questions({ questions, activeId, toggleQuestion }) {
 	return (
 		<section className="container">
 			<h1 className="fs-800 text-900 fw-700 flex items-center">
@@ -11,7 +11,12 @@ function Questions({ questions }) {
 				FAQs
 			</h1>
 			{questions.map((question) => (
-				<SingleQuestion key={question.id} {...question} />
+				<SingleQuestion
+					key={question.id}
+					{...question}
+					activeId={activeId}
+					toggleQuestion={toggleQuestion}
+				/>
 			))}
 		</section>
 	);
