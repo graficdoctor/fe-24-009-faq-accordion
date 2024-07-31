@@ -56,6 +56,7 @@ I bounced on certain issues I need to figure out:
 - on hover effect on the title & how to make the title clickable
 - add in A11y
 - change background-color in icons/components from other libraries
+- working with images in React = optimizing for deployment
 
 ## Author
 
