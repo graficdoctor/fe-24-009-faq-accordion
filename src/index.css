@@ -2,42 +2,34 @@
 /* Custom Properties */
 /* ----------------  */
 
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
-	--clr-900: 230 35% 7%;
-	--clr-300: 231 77% 90%;
+	--clr-900: 292, 42%, 14%;
+	--clr-600: 292, 16%, 49%;
+	--clr-400: 281, 83%, 54%;
+	--clr-300: 275, 100%, 97%;
 	--clr-100: 0 0% 100%;
 
-	--fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
-	--fs-800: 3.5rem;
+	--fs-900: 3.5rem;
+	--fs-800: 2rem;
 	--fs-700: 1.5rem;
-	--fs-600: 1rem;
+	--fs-600: 1.25rem;
 	--fs-500: 1rem;
-	--fs-400: 0.9375rem;
+	--fs-400: 0.875rem;
 	--fs-300: 1rem;
 	--fs-200: 0.875rem;
 
-	--ff-serif: serif;
-	--ff-sans-cond: sans-serif;
-	--ff-sans-normal: sans-serif;
+	--ff-sans: 'Work Sans', sans-serif;
 }
 
-@media (min-width: 35em) {
+@media (min-width: 40em) {
 	:root {
-		--fs-800: 5rem;
+		--fs-800: 3.5rem;
 		--fs-700: 2.5rem;
 		--fs-600: 1.5rem;
-		--fs-500: 1.25rem;
+		--fs-500: 1.125rem;
 		--fs-400: 1rem;
-	}
-}
-
-@media (min-width: 45em) {
-	:root {
-		--fs-800: 6.25rem;
-		--fs-700: 3.5rem;
-		--fs-600: 2rem;
-		--fs-500: 1.75rem;
-		--fs-400: 1.125rem;
 	}
 }
 
@@ -87,15 +79,11 @@ p {
 }
 
 body {
-	font-family: var(--ff-sans-normal);
+	font-family: var(--ff-sans);
 	font-size: var(--fs-400);
-	background-color: hsl(var(--clr-dark));
-	color: hsl(var(--clr-white));
+	background-color: hsl(var(--clr-300));
+	color: hsl(var(--clr-600));
 	line-height: 1.5;
-	min-height: 100vh;
-	display: grid;
-	grid-template-rows: min-content 1fr;
-	overflow-x: hidden;
 }
 
 img,
@@ -136,6 +124,10 @@ select {
 .grid {
 	display: grid;
 	gap: var(--gap, 1rem);
+}
+
+.items-center {
+	align-items: center;
 }
 
 .d-block {
@@ -187,26 +179,39 @@ select {
 	transform: translateY(0);
 }
 
+.margin-top-5 {
+	margin-top: 1.25rem;
+}
+
 /* Colors */
 
-.bg-dark {
-	background-color: hsl(var(--clr-dark));
+.bg-900 {
+	background-color: hsl(var(--clr-900));
 }
-.bg-accent {
-	background-color: hsl(var(--clr-light));
+.bg-600 {
+	background-color: hsl(var(--clr-600));
 }
-.bg-white {
-	background-color: hsl(var(--clr-white));
+.bg-300 {
+	background-color: hsl(var(--clr-300));
+}
+.bg-100 {
+	background-color: hsl(var(--clr-100));
 }
 
-.text-dark {
-	color: hsl(var(--clr-dark));
+.text-900 {
+	color: hsl(var(--clr-900));
 }
-.text-accent {
-	color: hsl(var(--clr-light));
+.text-600 {
+	color: hsl(var(--clr-600));
 }
-.text-white {
-	color: hsl(var(--clr-white));
+.text-400 {
+	color: hsl(var(--clr-400));
+}
+.text-300 {
+	color: hsl(var(--clr-300));
+}
+.text-100 {
+	color: hsl(var(--clr-100));
 }
 
 .example-component {
@@ -215,14 +220,8 @@ select {
 
 /* Typography */
 
-.ff-serif {
-	font-family: var(--ff-serif);
-}
-.ff-sans-cond {
-	font-family: var(--ff-sans-cond);
-}
-.ff-sans-normal {
-	font-family: var(--ff-sans-normal);
+.ff-sans {
+	font-family: var(--ff-sans);
 }
 
 .letter-spacing-1 {
@@ -233,6 +232,10 @@ select {
 }
 .letter-spacing-3 {
 	letter-spacing: 2.35px;
+}
+
+.line-height-1 {
+	line-height: 1;
 }
 
 .uppercase {
@@ -271,34 +274,80 @@ select {
 	line-height: 1.1;
 }
 
+.fw-400 {
+	font-weight: 400;
+}
+
+.fw-600 {
+	font-weight: 600;
+}
+
+.fw-700 {
+	font-weight: 700;
+}
+
 /* ----------------  */
 /* Components        */
 /* ----------------  */
 
-/* ---------------------------  */
-/* Page Specific Background     */
-/* ---------------------------  */
+main {
+	background-color: hsl(var(--clr-100));
+	border-radius: 8px;
+	padding: 1.5rem;
+	width: min(calc(100vw - 2rem), 600px);
+	margin: 9rem auto;
+}
+
+.question-btn {
+	cursor: pointer;
+	border-radius: 100%;
+	aspect-ratio: 1/1;
+	border: transparent;
+	background-color: hsl(var(--clr-400));
+	color: hsl(var(--clr-100));
+	display: grid;
+	place-items: center;
+}
+
+/* ----------------  */
+/* Page Specific     */
+/* ----------------  */
 
 /* ----------------  */
 /* Layout            */
 /* ----------------  */
 
-@font-face {
-	font-family: 'Work Sans';
-	src: url();
+body {
+	background-image: url(/assets/images/background-pattern-mobile.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: top;
 }
 
-h1 {
-	font-family: grapenuts;
+@media (min-width: 40em) {
+	body {
+		background-image: url(/assets/images/background-pattern-desktop.svg);
+	}
+
+	main {
+		margin-top: 10rem;
+	}
 }
 
-main {
-}
 .container {
 }
 
 .question {
+	padding-block: 20px;
+	border-bottom: 1px solid hsl(var(--clr-300));
 }
 
-.question-btn {
+.question:last-child {
+	border-bottom: none;
+}
+
+.question header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
+import { FaPlus, FaMinus } from 'react-icons/fa6';
 
 function SingleQuestion({ title, info }) {
 	const [showInfo, setShowInfo] = useState(false);
@@ -7,16 +7,16 @@ function SingleQuestion({ title, info }) {
 	return (
 		<article className="question">
 			<header>
-				<h5>{title}</h5>
+				<h2 className="fs-500 fw-600 text-900 line-height-1">{title}</h2>
 				<button
 					className="question-btn"
 					type="button"
 					onClick={() => setShowInfo(!showInfo)}
 				>
-					{showInfo ? <AiOutlineMinus /> : <AiOutlinePlus />}
+					{showInfo ? <FaMinus/> : <FaPlus />}
 				</button>
 			</header>
-			{showInfo && <p>{info}</p>}
+			{showInfo && <p className="margin-top-5">{info}</p>}
 		</article>
 	);
 }
