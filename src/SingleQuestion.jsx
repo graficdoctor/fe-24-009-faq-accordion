@@ -12,6 +12,7 @@ function SingleQuestion({ id, title, info, activeId, toggleQuestion }) {
 					className="question-btn"
 					type="button"
 					onClick={() => toggleQuestion(id)}
+					aria-label={isActive ? 'Collapse' : 'Expand'}
 				>
 					{isActive ? <FaMinus /> : <FaPlus />}
 				</button>
